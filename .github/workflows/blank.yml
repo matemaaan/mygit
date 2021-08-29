@@ -14,7 +14,7 @@ jobs:
     
     steps:
       - name: list of folder
-        run: lsp -la
+        run: ls -la
       
       - name: Git clone my repository
         uses: actions/checkout@v1
