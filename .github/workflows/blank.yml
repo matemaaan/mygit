@@ -1,4 +1,6 @@
 name: check
+env:
+  name: "Peter"
 
 on:
   push:
@@ -12,12 +14,24 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: list of folder
+        run: ls -la
+      
+      - name: Git clone my repository
       - uses: actions/checkout@v2
       
-      - name: print hello message
-        run: echo "Hello, world!"
-
-      - name: print multi-line message
+      - name: and at now
+        run: ls -la
+      
+      - name: print hello message in check
+        run: echo "Hello, ${{ env.name }}"
+  
+  my_test:
+    runs-on: ubuntu-latest
+    needs: my_check
+    
+    steps:
+      - name: print multi-line message in test
         run: |
           echo "This \
           multi-line"
