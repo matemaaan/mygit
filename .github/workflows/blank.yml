@@ -18,7 +18,7 @@ jobs:
         run: ls -la
       
       - name: Git clone my repository
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       
       - name: and at now
         run: ls -la
